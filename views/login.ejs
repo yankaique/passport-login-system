@@ -1,17 +1,37 @@
-<h1>Login</h1>
-<% if(messages.error){ %>
+<style>
+    .loginContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80%;
+    }
+
+    .formContainer{
+        margin-top: 20px;
+    }
+
+    button{
+        margin-top: 20px;
+    }
+</style>
+
+<div class="loginContainer">
+    <h1>Login</h1>
+    <% if(messages.error){ %>
     <%=  messages.error  %>
     <%}                   %>
-<form action="/login" method="POST">
-    <div>
-        <label for="name">Email</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Login</button>
-</form>
+    <form action="/login" method="POST">
+        <div class="formContainer">
+            <label for="name">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="formContainer">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
 
-<a href="/register">Register</a>
+    <a href="/register">Register</a>
+</div>
